@@ -1,0 +1,23 @@
+package com.hib.tut.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
+public class Department {
+
+	@Id
+	private int depId;
+	
+	@Column
+	private String depDesignation;
+	
+	private String depRole;
+
+	
+	@JoinColumn
+	private Employee employee;
+
+	public Department(){}
+	
+	}

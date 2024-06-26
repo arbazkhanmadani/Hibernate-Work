@@ -1,0 +1,54 @@
+import java.util.Map;
+
+import org.hibernate.boot.spi.SessionFactoryOptions;
+import org.hibernate.cache.CacheException;
+import org.hibernate.cache.cfg.spi.DomainDataRegionBuildingContext;
+import org.hibernate.cache.cfg.spi.DomainDataRegionConfig;
+import org.hibernate.cache.spi.DomainDataRegion;
+import org.hibernate.cache.spi.QueryResultsRegion;
+import org.hibernate.cache.spi.TimestampsRegion;
+import org.hibernate.cache.spi.access.AccessType;
+import org.hibernate.engine.spi.SessionFactoryImplementor;
+
+import net.sf.ehcache.hibernate.EhCacheRegionFactory;
+
+public class Test extends EhCacheRegionFactory {
+
+	@Override
+	public void start(SessionFactoryOptions settings, Map configValues) throws CacheException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public AccessType getDefaultAccessType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String qualify(String regionName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DomainDataRegion buildDomainDataRegion(DomainDataRegionConfig regionConfig,
+			DomainDataRegionBuildingContext buildingContext) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public QueryResultsRegion buildQueryResultsRegion(String regionName, SessionFactoryImplementor sessionFactory) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimestampsRegion buildTimestampsRegion(String regionName, SessionFactoryImplementor sessionFactory) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

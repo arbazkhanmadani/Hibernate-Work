@@ -1,0 +1,8 @@
+package com.hib.tut.entities;
+
+import javax.persistence.*;
+
+@Entity
+public class Interns {
+
+}

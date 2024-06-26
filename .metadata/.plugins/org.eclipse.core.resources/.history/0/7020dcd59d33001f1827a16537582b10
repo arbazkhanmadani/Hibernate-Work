@@ -1,0 +1,11 @@
+package com.hib.tut.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table
+public class Interns {
+
+	@Id
+	@GeneratedValue(GenerationType.IDENTITY)
+}

@@ -1,0 +1,22 @@
+package com.hib.tut.entities;
+
+import javax.persistence.*;;
+
+public class Employee {
+
+	@Id
+	private int eId;
+	
+	@Column
+	private int eAge;
+	
+	@Column(name="name", nullable=false, length=100)
+	private String eName;
+
+	@Column(nullable=false)
+	private double eSalary;
+
+	@JoinColumn
+	private Department department;
+
+}

@@ -1,0 +1,5 @@
+package com.hib.tut.dao;
+
+public class ManyToManyEmpDepDAO {
+
+}

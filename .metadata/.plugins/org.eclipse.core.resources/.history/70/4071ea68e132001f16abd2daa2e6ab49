@@ -1,0 +1,85 @@
+package com.hib.tut.entities;
+
+import java.util.Date;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="students")
+public class Students {
+
+	@Id
+	private int rollNo;
+	
+	@Column
+	private int age;
+	
+	@Column(name="name", nullable=false, length=100)
+	private int name;
+
+	@Column(nullable=false)
+	private int college;
+	
+	@Column(nullable=false)
+	private double fee;
+
+	
+
+	public Students(int rollNo, int age, int name, int college, double fee) {
+		this.rollNo = rollNo;
+		this.age = age;
+		this.name = name;
+		this.college = college;
+		this.fee = fee;
+	}
+	
+	public Students(){}
+	
+	@Override
+	public String toString() {
+		return "Students [rollNo=" + rollNo + ", age=" + age + ", name=" + name + ", college=" + college + ", fee="
+				+ fee + "]";
+	}
+
+	public int getRollNo() {
+		return rollNo;
+	}
+
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getName() {
+		return name;
+	}
+
+	public void setName(int name) {
+		this.name = name;
+	}
+
+	public int getCollege() {
+		return college;
+	}
+
+	public void setCollege(int college) {
+		this.college = college;
+	}
+
+	public double getFee() {
+		return fee;
+	}
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+
+		
+}

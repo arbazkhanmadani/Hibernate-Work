@@ -1,0 +1,5 @@
+package com.hib.tut.entities;
+
+public class Project {
+
+}

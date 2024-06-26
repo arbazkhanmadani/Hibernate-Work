@@ -1,0 +1,26 @@
+package com.hib.tut.entities;
+
+import java.util.Date;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="students")
+public class Students {
+
+	@Id
+	private int rollNo;
+	
+	@Column
+	private int age;
+	
+	@Column(name="name", nullable=false, length=100)
+	private int name;
+
+	@Column(nullable=false)
+	private int college;
+	
+	@Column(nullable=false)
+	private double fee;
+		
+}

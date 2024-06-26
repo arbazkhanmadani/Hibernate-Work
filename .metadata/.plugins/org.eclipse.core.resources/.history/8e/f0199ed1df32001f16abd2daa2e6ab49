@@ -1,0 +1,13 @@
+package com.hib.tut.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="students")
+public class Students {
+
+	@Id
+	private int rollNo;
+	
+	@Column
+}

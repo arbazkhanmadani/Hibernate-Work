@@ -1,0 +1,28 @@
+package com.hib.tut.entities;
+
+import java.util.Set;
+import javax.persistence.*;
+
+@Entity
+@Table
+public class Project {
+
+	@Id
+	private int proId;
+	
+	@Column
+	private String proDuration;
+	
+	private String proName;
+
+	
+	
+	/*
+	 * In Foreign key Table we have to map ForiegnKey column to here => mappedBy="employee"
+	 *@jointColumn => we can't use in mapped Entity.
+	 * mappedBy="department" => For removing extra primary and foreign key mapping Table.
+	 * */
+	@ManyToMany(mappedBy="department",cascade=CascadeType.ALL)
+	private Set<Developer> devloper;
+
+}

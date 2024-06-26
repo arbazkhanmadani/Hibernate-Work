@@ -1,0 +1,72 @@
+package com.hib.tut.entities;
+
+import java.util.Set;
+import javax.persistence.*;
+
+@Entity
+@Table
+public class Project {
+
+	@Id
+	private int proId;
+	
+	@Column
+	private String proDuration;
+	
+private String proName;
+	
+	@ManyToMany(mappedBy="project",cascade=CascadeType.ALL)
+	private Set<Developer> devloper;
+	
+	
+	public Project(){}
+	@Override
+	public String toString() {
+		return "Project [proId=" + proId + ", proDuration=" + proDuration + ", proName=" + proName + ", devloper="
+				+ devloper + "]";
+	}
+
+	public int getProId() {
+		return proId;
+	}
+
+	public void setProId(int proId) {
+		this.proId = proId;
+	}
+
+	public String getProDuration() {
+		return proDuration;
+	}
+
+	public void setProDuration(String proDuration) {
+		this.proDuration = proDuration;
+	}
+
+	public String getProName() {
+		return proName;
+	}
+
+	public void setProName(String proName) {
+		this.proName = proName;
+	}
+
+	public Set<Developer> getDevloper() {
+		return devloper;
+	}
+
+	public void setDevloper(Set<Developer> devloper) {
+		this.devloper = devloper;
+	}
+
+	public Project(int proId, String proDuration, String proName, Set<Developer> devloper) {
+		super();
+		this.proId = proId;
+		this.proDuration = proDuration;
+		this.proName = proName;
+		this.devloper = devloper;
+	}
+
+	
+	
+
+}

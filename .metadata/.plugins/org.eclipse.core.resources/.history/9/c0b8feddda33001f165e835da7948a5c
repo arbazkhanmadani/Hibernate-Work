@@ -1,0 +1,28 @@
+package com.hib.tut.entities;
+
+import java.util.Set;
+
+import javax.persistence.*;
+
+@Entity
+@Table
+public class Developer {
+
+	@Id
+	private int devId;
+	
+	@Column
+	private int devAge;
+	
+	@Column(name="name", length=100)
+	private String devName;
+
+	@Column(nullable=false)
+	private double devSalary;
+
+	@ManyToMany(mappedBy="developer",cascade=CascadeType.ALL)
+	private Set<Project> project;
+
+	
+	public Developer(){}
+}

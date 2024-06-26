@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;HibConfig.java&apos; to &apos;hibernatetutotial/src/main/java/com.hib.tut.helper&apos;&#x0D;&#x0A;- Original project: &apos;HibPro1&apos;&#x0D;&#x0A;- Destination element: &apos;hibernatetutotial/src/main/java/com.hib.tut.helper&apos;&#x0D;&#x0A;- Original element: &apos;org.example.config.HibConfig.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=hibernatetutotial/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hib.tut.helper" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.example.config{HibConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1719421145949" units="1" version="1.0"/>
+</session>

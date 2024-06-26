@@ -1,0 +1,26 @@
+package com.hib.tut.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+public class Developer {
+
+	@Id
+	private int devId;
+	
+	@Column
+	private int devAge;
+	
+	@Column(name="name", length=100)
+	private String devName;
+
+	@Column(nullable=false)
+	private double devSalary;
+
+	@ManyToOne
+	@JoinColumn(name="Dep_FId")
+	private Project project;
+
+}

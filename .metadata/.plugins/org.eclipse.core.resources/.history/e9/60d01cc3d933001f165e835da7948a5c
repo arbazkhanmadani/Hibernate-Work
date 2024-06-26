@@ -1,0 +1,39 @@
+package com.hib.tut.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.hib.tut.entities.Department;
+import com.hib.tut.entities.Employee;
+import com.hib.tut.helper.SessionFactoryProvider;
+
+public class ManyToManyEmpDepDAO {
+
+	public static void saveProject(Project p) {
+
+		Session sf = SessionFactoryProvider.getSession().openSession();
+    	Transaction tx =  sf.beginTransaction();
+    	
+    	sf.persist(p);	
+    	tx.commit();
+    	
+    	sf.close();
+    	//SessionFactoryProvider.closeSession();
+    
+	}
+	
+	public static void saveDev(Developer d) {
+
+		Session sf = SessionFactoryProvider.getSession().openSession();
+    	Transaction tx =  sf.beginTransaction();
+    	
+    	sf.save(d);	
+    	tx.commit();
+    	
+    	sf.close();
+    	//SessionFactoryProvider.closeSession();
+    
+	}
+
+
+}

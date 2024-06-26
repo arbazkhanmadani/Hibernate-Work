@@ -1,0 +1,21 @@
+package com.hib.tut.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table
+public class Interns {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int InternId;
+	
+	@Column
+	private String department;
+	@Column
+	private String role;
+
+	@OneToOne
+	@JoinColumn(name="SId")
+	private Students students;
+}

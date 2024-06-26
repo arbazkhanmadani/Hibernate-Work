@@ -1,0 +1,5 @@
+package com.hib.tut.helper;
+
+public class SessionFactoryHelper {
+
+}
