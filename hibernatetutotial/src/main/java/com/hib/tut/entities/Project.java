@@ -15,7 +15,8 @@ public class Project {
 	
 	private String proName;
 	
-	@ManyToMany(cascade=CascadeType.ALL)
+	//fetch=FetchType.EAGER => If we wont use it both side Lazy loading error will thrown.
+	@ManyToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	private Set<Developer> devloper;
 	
 	

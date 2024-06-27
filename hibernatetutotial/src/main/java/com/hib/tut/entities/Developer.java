@@ -1,5 +1,6 @@
 package com.hib.tut.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -23,8 +24,8 @@ public class Developer {
 	/*
 	 *In @ManyToMany => we can't use "mappedBy".
 	*/
-	@ManyToMany(cascade=CascadeType.ALL)
-	private Set<Project> project;
+	@ManyToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	private List<Project> project;
 
 	
 	public Developer(){}
@@ -77,17 +78,17 @@ public class Developer {
 	}
 
 
-	public Set<Project> getProject() {
+	public List<Project> getProject() {
 		return project;
 	}
 
 
-	public void setProject(Set<Project> project) {
-		this.project = project;
+	public void setProject(List<Project> s2) {
+		this.project = s2;
 	}
 
 
-	public Developer(int devId, int devAge, String devName, double devSalary, Set<Project> project) {
+	public Developer(int devId, int devAge, String devName, double devSalary, List<Project> project) {
 		super();
 		this.devId = devId;
 		this.devAge = devAge;

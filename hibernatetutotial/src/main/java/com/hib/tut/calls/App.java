@@ -109,15 +109,20 @@ public class App {
     	p2.setProDuration("24 month");
     	
     	Set<Developer> s1 = Set.of(d1,d2);
-    	Set<Project> s2 = Set.of(p1,p2);
+    	List<Project> s2 = List.of(p1,p2);
     	
     	d1.setProject(s2);
     	d2.setProject(s2);
     	p1.setDevloper(s1);
     	p2.setDevloper(s1);
     	
-    	ManyToManyEmpDepDAO.saveDev(d1);
+    	//ManyToManyEmpDepDAO.saveDev(d1);
+    	Developer dev = ManyToManyEmpDepDAO.fetchDev(100);
+    	System.out.println(dev.getDevId()+" | "+dev.getDevName()+" | "+dev.getDevSalary()+" | "+dev.getDevAge());
     	
+    	//here we have to it bcz the return type is LIST.
+    	List<Project> al = dev.getProject();
+    	al.forEach((o)->System.out.println(o.getProDuration()+" | "+o.getProName()));
     	
     	/*==============QueryEcample================*/
     	//OneManyEmpDepDAO.saveDep(d1);
