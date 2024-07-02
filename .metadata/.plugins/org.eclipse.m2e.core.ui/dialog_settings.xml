@@ -6,6 +6,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="A:\JavaProject\HibernateWork\hibernatetutotial"/>
+			<item value="A:\JavaProject\HibernateWork\spring-orm\src\main\java\com\spring\orm\call\App.java"/>
 			<item value="C:\Users\arbaz\Downloads\HibJDBC\HibPro1\src\main\java\org\example\modals\Auther.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -30,13 +32,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.hib.tut"/>
+			<item value="com.spring.mvc"/>
 		</list>
 		<list key="groupId">
 			<item value="com"/>
 		</list>
 		<list key="artifactId">
-			<item value="hibernatetutotial"/>
+			<item value="spring-mvc"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -68,5 +70,29 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.preferences.LocalArchetypeCatalogDialog">
+		<list key="catalogLocation">
+			<item value="C:\Program Files\javaDependency\maven-archetype-webapp-1.0.jar"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
+		<list key="archetypeGroupId">
+			<item value="org.apache.maven.archetypes"/>
+		</list>
+		<list key="archetypeArtifactId">
+			<item value="maven-archetype-webapp"/>
+		</list>
+		<list key="archetypeVersion">
+			<item value="1.0-alpha-2"/>
+			<item value="1.0-alpha-1"/>
+			<item value="1.0"/>
+			<item value="1.4"/>
+		</list>
+		<list key="repositoryUrl">
+			<item value="https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-webapp"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.preferences.RemoteArchetypeCatalogDialog">
 	</section>
 </section>

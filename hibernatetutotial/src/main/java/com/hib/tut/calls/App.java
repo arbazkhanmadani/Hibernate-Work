@@ -1,5 +1,8 @@
 package com.hib.tut.calls;
 
+import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Set;
 
@@ -11,6 +14,7 @@ import com.hib.tut.entities.Department;
 import com.hib.tut.entities.Developer;
 import com.hib.tut.entities.Employee;
 import com.hib.tut.entities.Interns;
+import com.hib.tut.entities.Joining;
 import com.hib.tut.entities.Project;
 import com.hib.tut.entities.Students;
 import com.hib.tut.helper.SessionFactoryProvider;
@@ -18,7 +22,8 @@ import com.hib.tut.helper.SessionFactoryProvider;
 public class App {
 	
 	
-    public static void main( String[] args ){
+    @SuppressWarnings("deprecation")
+	public static void main( String[] args ){
     
     	
     	/*===================JOINS EXAMPLE===================*/
@@ -86,7 +91,7 @@ public class App {
     	
     	
     	/*=========ManyToMany================*/
-    	Developer d1 = new Developer();
+    	/*Developer d1 = new Developer();
     	d1.setDevId(100);
     	d1.setDevAge(22);
     	d1.setDevName("Arbaz Khan");
@@ -123,15 +128,26 @@ public class App {
     	//here we have to it bcz the return type is LIST.
     	List<Project> al = dev.getProject();
     	al.forEach((o)->System.out.println(o.getProDuration()+" | "+o.getProName()));
+    	*/
+    	
     	
     	/*==============QueryEcample================*/
     	//OneManyEmpDepDAO.saveDep(d1);
     	//OneManyEmpDepDAO.saveDep(d2);
-    	/*
-    	//Add======
-    	//Students stud = new Students(114,22,"Tabish","MU",61000.0);
-    	//StudentsDAO.save(stud);
     	
+    	//Add======
+    	Date d = new Date(0, 0, 0);
+    	d.setHours(12);
+    	d.setMinutes(30);
+    	d.setSeconds(50);
+    	Students stud = new Students(102,22,"Arbaz","MU",61000.0);
+    	
+    	Joining j = new Joining(new Date(2024, 6, 20), new Date(2024, 12, 20),d);
+    	Interns i = new Interns(2002,"Project Management","DevOps", stud,j);
+    	stud.setInterns(i);
+    	StudentsDAO.save(stud);
+    	//InternsDAO.save(i);
+    	/*
     	
     	//Update====
     	Students stud1 = new Students(109,21,"Sarfaraz Khan","MU",185000);

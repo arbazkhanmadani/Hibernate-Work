@@ -24,12 +24,12 @@ public class StudentsDAO {
     	Transaction tx =  sf.beginTransaction();
     	
     	sf.save(s);	
-    	tx.commit();
     	
+    	tx.commit();
     	sf.close();
     	//SessionFactoryProvider.closeSession();
     
-    	if(tx!=null) {
+    	if(tx==null) {
             tx.rollback();
         }
 	}

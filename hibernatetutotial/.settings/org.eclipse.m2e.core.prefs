@@ -1,4 +1,4 @@
-activeProfiles=
+activeProfiles=http\://repo1.maven.org/archetype-catalog.xml
 eclipse.preferences.version=1
 resolveWorkspaceProjects=true
 version=1

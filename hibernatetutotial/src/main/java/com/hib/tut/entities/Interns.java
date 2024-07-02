@@ -17,9 +17,28 @@ public class Interns {
 	@Column
 	private String role;
 
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="SId")
 	private Students students;
+
+	private Joining joining;
+	
+	public Joining getJoining() {
+		return joining;
+	}
+
+	public void setJoining(Joining joining) {
+		this.joining = joining;
+	}
+
+	public Interns(int internId, String department, String role, Students students, Joining joining) {
+		super();
+		this.internId = internId;
+		this.department = department;
+		this.role = role;
+		this.students = students;
+		this.joining = joining;
+	}
 
 	public Interns(){}
 	
@@ -66,8 +85,8 @@ public class Interns {
 
 	@Override
 	public String toString() {
-		return "Interns [internId=" + internId + ", department=" + department + ", role=" + role
-				+ ", students=" + students + "]";
+		return "Interns [internId=" + internId + ", department=" + department + ", role=" + role + ", students="
+				+ students + ", joining=" + joining + "]";
 	}
 
 }

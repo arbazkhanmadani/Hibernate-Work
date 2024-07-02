@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        https://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/util
+                        http://www.springframework.org/schema/util/spring-util.xsd">
+  
+
+
+	<!-- Annotation configuration unable -->
+	<context:annotation-config/>	
+	<context:component-scan base-package="com.spring.core"/>
+
+	<!-- Stand alone collection  -->
+	<util:list id="pList" list-class="java.util.ArrayList">
+		<value>Fridge</value>
+		<value>T.V.</value>
+		<value>laptop</value>
+	</util:list>
+	
+	<!-- Setter Injection -->
+	<bean id="college1" class="com.spring.core.beans.College">  
+ 		<property name="clgCode"><value>08201012</value></property>
+ 		<property name="clgName" value="Lakshmi Narain College of Technology"/>
+ 		<property name="clgBranch">
+ 			<set>
+             	<value>Btech</value>
+             	<value>MBBS</value>
+             	<value>BBA</value>
+             	<value>MBA</value>
+        	</set>
+ 		</property>
+		<property name="clgCourseFee">
+ 		
+ 		<map>
+ 			<entry key="CSE" value="150000"/>
+ 			<entry key="ECE" value="120000"/>
+ 			<entry key="EEE" value="130000"/>
+ 		</map>
+ 		</property>
+	</bean>  
+  
+	<bean id="Student1" class="com.spring.core.beans.Students">  
+ 		<property name="sId"><value>100</value></property>
+ 		<property name="age" value="22"/>
+ 		<property name="fee" value="61000.0"/>
+ 		<property name="name" value="Arbaz Khan"/>
+ 		<property name="skills">
+ 			<list>
+             	<value>Java</value>
+             	<value>Javascript</value>
+             	<value>SQL</value>
+             	<value>MERN</value>
+        	</list>
+        </property>
+        <!-- Referencing the College Bean -->
+        <property name="clg" ref="college1"></property>
+ 
+	</bean>  
+  
+  <!-- Constructor Injection -->
+  <bean id="emp" class="com.spring.core.beans.Employee">
+  		<constructor-arg name="empId" value="100" type="int"/>
+  		<constructor-arg name="empName" value="Arbaz" type="String"/>
+  		<constructor-arg name="designation" value="Software Engineer" type="String"/>
+  		<constructor-arg name="dateOfjoin" value="2024-6-20" type="String"/>
+  		<constructor-arg name="salary" value="50000" type="int"/>
+  		
+  </bean>
+  
+  
+  <!-- Auto wiring by XML
+  <bean id="retailer" class="com.spring.core.beans.javaconfig.Retailer" name="retailer">
+  	<property name="SuppName" value="Tabish  dehlvi"/>	
+  </bean>
+  <bean id="retailerXML" class="com.spring.core.beans.javaconfig.RetailerAutowireXML" autowire="byType">
+  	<property name="retailer" ref="retailer"/>	
+  </bean>
+   -->
+  <!-- Life Cycle method Example ByXML-->
+  <bean id="LifeCycleByXML" class="com.spring.core.lifecycle.LifeCycleByXML" init-method="init" destroy-method="destroy">
+  	<property name="name" value="ByXML"/>	
+  </bean>
+  
+  <!-- Life Cycle method Example ByAnnotation-->
+  <bean id="LifeCycleByAnnotation" class="com.spring.core.lifecycle.LifeCycleByAnnotation">
+  	<property name="name" value="ByAnnotations"/>	
+  </bean>
+  
+  <!-- Life Cycle method Example By Interface-->
+  <bean id="LifeCycleByInterface" class="com.spring.core.lifecycle.LifeCycleByInterface">
+  </bean>
+
+
+
+</beans>

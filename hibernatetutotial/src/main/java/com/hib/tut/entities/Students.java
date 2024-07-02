@@ -35,7 +35,7 @@ public class Students {
 	private double fee;
 
 	//cascade=CascadeType.ALL => The Entity Mapped to It Automatically-> SAVED,UPDATE,DELETE and SELECT.
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="IntId")
 	private Interns interns;
 	
